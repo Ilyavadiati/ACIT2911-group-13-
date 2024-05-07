@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Clarity - BCIT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="1200px-BCIT_logo.svg.png" alt="BCIT Logo" class="logo">
+        <h1>Course Clarity</h1>
+        <p>Share your experience and help improve teaching quality at BCIT.</p>
+        <nav>
+            <button onclick="location.href='login.html'">Login</button>
+            <button onclick="location.href='signup.html'">Sign Up</button>
+            <button onclick="location.href='review.html'">Review</button>
+            <button onclick="location.href='addReview.html'">Add Review</button>
+        </nav>
+    </header>
+    <main>
+        <section id="search">
+            <h2>Find a Course or Instructor</h2>
+            <input type="text" placeholder="Search courses, instructors..." aria-label="Search">
+            <button type="button">Search</button>
+        </section>
+        <section id="featuredCourses">
+            <h2>Featured Courses</h2>
+            <div class="course-list">
+                <div class="course-item">
+                    <h3>COMP 1510 - Programming Methods</h3>
+                    <p>Learn the fundamentals of programming with a focus on problem solving and algorithm development.</p>
+                </div>
+                <div class="course-item">
+                    <h3>BLDG 2935 - Construction Estimating</h3>
+                    <p>Understand the basics of construction estimating, including material takeoffs and cost calculations.</p>
+                </div>
+                <div class="course-item">
+                    <h3>MARK 1120 - Introductory Marketing</h3>
+                    <p>Explore marketing principles and develop a marketing plan for a real or simulated product.</p>
+                </div>
+            </div>
+        </section>
+        <section id="featuredInstructors">
+            <h2>Top Rated Instructors</h2>
+            <div class="instructor-list">
+                <div class="instructor-item">
+                    <h3>Dr. Emily Ryan - Physics</h3>
+                    <p>Renowned for engaging lectures that make complex topics accessible and enjoyable.</p>
+                </div>
+                <div class="instructor-item">
+                    <h3>Prof. John Doe - Mathematics</h3>
+                    <p>Adept at explaining advanced mathematical concepts with clarity and patience.</p>
+                </div>
+                <div class="instructor-item">
+                    <h3>Ms. Jane Smith - Business Management</h3>
+                    <p>Specializes in practical business strategies and real-world applications.</p>
+                </div>
+            </div>
+        </section>
+        <section id="latestReviews">
+            <h2>Latest Reviews</h2>
+            <article>
+                <h3>Great Experience in COMP 1510</h3>
+                <p>Really enjoyed the course, the instructor was very knowledgeable and the content was up-to-date with industry standards.</p>
+                <span>Reviewed by: Student A</span>
+            </article>
+            <article>
+                <h3>Needs Improvement in MARK 1120</h3>
+                <p>The course could use more practical examples and updated case studies. It felt a bit outdated.</p>
+                <span>Reviewed by: Student B</span>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>BCIT &copy; 2024. All rights reserved.</p>
+    </footer>
+</body>
+</html>
