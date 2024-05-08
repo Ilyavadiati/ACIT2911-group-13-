@@ -1,14 +1,14 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
 header {
-    background-color: #003262;
+    background-color: #ffffff;
     color: white;
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
     position: sticky;
     top: 0;
@@ -16,10 +16,149 @@ header {
 }
 
 header .logo {
-    width: 100px;
+    width: 80px;
 }
 
-nav button {
+.menubar ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    justify-content: flex-end;
+    margin-top: 0;
+}
+
+.menu-button:hover{
+    color: #003c71;
+    background-color: yellow;
+}
+
+.menubar {
+    background-color: #003c71;
+}
+
+.menu-button {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 1rem;
+    transition: color 0.5s, background-color 0.5s;
+    cursor: default;
+    height: 100%;
+    background-color: transparent;
+    border-color: transparent;
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 3rem 1rem 3rem;
+
+}
+
+.header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style-type: none;
+    gap: 1rem;
+}
+.header li {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.header li:hover {
+    border-bottom: 2px solid #fff400;
+}
+
+.header-button {
+    color: #003c71;
+    font-weight: bold;
+    text-decoration: unset;
+    transition: color 0.5s;
+    font-family: 'Nunito Sans';
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 16px;
+}
+
+#title {
+    height: 400px;
+    background-image: url(images/bcit-big-info.png);
+    color: #ffffff;
+    text-align: left;
+    padding-left: 20px;
+    font-family:'DM Sans',Arial,sans-serif;
+}
+
+.title-container{
+    padding-top: 150px;
+}
+.title-container h1{
+    font-size: 54px;
+    margin: 0;
+    letter-spacing: 2.0px;
+    font-weight: 500;
+    
+}
+
+.title-container p{
+    margin: 0;
+    
+}
+
+.searches-container {
+    display: flex;
+    margin-top: 30px;
+    justify-content: space-around; /* Distributes space between the search containers */
+    width: 100%; /* Ensures the container takes full width of its parent */
+}
+
+.search-container {
+    flex: 0 1 30%;
+    margin: 0 10px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 15px 40px 15px 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-right: 40px; /* Make space for the search icon */
+    font-size: 16px;
+    
+}
+
+button.search-button {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    height: 50px;
+    width: 50px;
+    /* transform: translateY(-0%); */
+}
+
+button.search-button img {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+/* nav button {
     background-color: #007cba;
     color: white;
     border: none;
@@ -27,14 +166,14 @@ nav button {
     margin: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-}
+} */
 
 nav button:hover {
     background-color: #005f8b;
 }
 
 main {
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
 }
 

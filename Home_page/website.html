@@ -5,25 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Clarity - BCIT</title>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="1200px-BCIT_logo.svg.png" alt="BCIT Logo" class="logo">
-        <h1>Course Clarity</h1>
-        <p>Share your experience and help improve teaching quality at BCIT.</p>
-        <nav>
-            <button onclick="location.href='login.html'">Login</button>
-            <button onclick="location.href='signup.html'">Sign Up</button>
-            <button onclick="location.href='review.html'">Review</button>
-            <button onclick="location.href='addReview.html'">Add Review</button>
+        <nav class="menubar">
+            <ul>
+                <li><button class="menu-button" onclick="location.href='login.html'">Login</button></li>
+                <li><button class="menu-button" onclick="location.href='signup.html'">Sign Up</button></li>
+            </ul>
         </nav>
+        <div class="header">
+            <img src="images/logo.svg" alt="BCIT Logo" class="logo">
+            <ul>
+                <li><button class="header-button" onclick="location.href='login.html'">Review</button></li>
+                <li><button class="header-button" onclick="location.href='signup.html'">Add Review</button></li>
+            </ul>
+        </div>
+       
+        
     </header>
+
     <main>
-        <section id="search">
+        <div id="title">
+            <div class="title-container">
+                <p>- Share your experience and help improve teaching quality at BCIT.</p>
+                <h1>Course Clarity</h1>
+            </div>
+        </div>
+        <!-- <section id="search">
             <h2>Find a Course or Instructor</h2>
-            <input type="text" placeholder="Search courses, instructors..." aria-label="Search">
-            <button type="button">Search</button>
-        </section>
+            <div class="searchbar-container">
+                <input type="text" placeholder="Search courses, instructors..." aria-label="Search">
+                <button type="button">Search</button>
+            </div>
+        </section> -->
+        <div class="searches-container">
+            <div class="search-container">
+                <label for="search-programs">Search Courses</label>
+                <input type="text" id="search-programs" placeholder=" ">
+                <button class="search-button">
+                    <img src="images/search-icon.png" alt="Search">
+                </button>
+            </div>
+            <div class="search-container">
+                <label for="search-courses">Search Instructors</label>
+                <input type="text" id="search-courses" placeholder=" ">
+                <button class="search-button">
+                    <img src="images/search-icon.png" alt="Search">
+                </button>
+            </div>
+        </div>
         <section id="featuredCourses">
             <h2>Featured Courses</h2>
             <div class="course-list">
