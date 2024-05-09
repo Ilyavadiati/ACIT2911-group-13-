@@ -189,6 +189,97 @@ main section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* .course-item {
+    background-image: 'images/search-icon.png';
+} */
+
+/* #featuredCourses {
+    width: 100%;
+} */
+
+.featured-course-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    align-items: flex-start;
+    /* flex-direction: row; */
+    gap: 4rem;
+}
+
+.featured-instructor-container{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+
+
+
+
+
+
+.instructor-item{
+    width: 20%; 
+    min-height: 300px;
+    /* background-color: #fff; */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.course-item {
+    width: 20%; 
+    min-height: 300px;
+    /* background-color: #fff; */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.image-section-course {
+    background-image: url(images/bcit-big-info.png);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
+.image-section-instructor {
+    background-image: url(images/elon-musk.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
+.text-section {
+    padding-top: 150px;
+    height: 50px;
+    width: 100%;
+}
+
+.course-card h1 {
+    font-size: 16px;
+    margin-top: 0;
+    color: #333;
+}
+
+.course-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.instructor-item h1 {
+    font-size: 16px;
+    margin-top: 0;
+    color: #333;
+}
+
+.instructor-item p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+
 .course-list, .instructor-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -196,19 +287,91 @@ main section {
 }
 
 .course-item, .instructor-item {
-    background: #eef;
-    padding: 15px;
+    /* background: #eef; */
+    /* padding: 15px; */
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.review-wrapper{
+    width: 100%;
+    background-color: #fff;
+}
+
+
+#latestReviews {
+    display: flex;
+    flex-direction: row; /* Aligns children vertically */
+    margin-top: 0;
+    width: auto; /* Adjust width as necessary */
+}
+
+#latestReviews h2 {
+    color: #333;
+    font-size: 24px;
+    margin: 20px 0 20px;
+    padding-top: 20px;
+}
+
+#latestReviews article {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 10px; /* Space between articles */
+    border: 1px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#latestReviews article:hover {
+    background-color: #f0f0f0;
+
+}
+
+#latestReviews h3 {
+    color: #003c71;
+    font-size: 20px;
+    margin-bottom: 5px;
+    
+}
+
+#latestReviews p, #latestReviews span {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* #latestReviews span {
+    font-size: 14px;
+    color: #333;
+    border-bottom: 2px solid yellow;
+    display: block; 
+} */
+
+.reviewer {
+    display: inline-block; /* Makes the div only as wide as its content */
+    border-bottom: 2px solid yellow; /* Your desired border */
+    padding-bottom: 5px; /* Optional: Adds a little space below the text */
+}
+
+.review-wrapper h2{
+    padding-top: 20px;
+}
+
+/* .reviewer:hover {
+    border-bottom: 2px solid #003c71;
+
+} */
+
+#latestReviews article:hover .reviewer {
+    border-bottom: 2px solid #003c71; /* Changes the border color to blue on hover */
+}
+
 
 footer {
     background-color: #222;
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    width: 100%;
+    /* position: fixed; */
     bottom: 0;
 }
 
