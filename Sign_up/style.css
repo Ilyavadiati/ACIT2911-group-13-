@@ -1,40 +1,72 @@
+html {
+    height: 100%;
+}
 body {
+    font: 400 normal 100%/1.78 "Nunito Sans", Arial, sans-serif;
+    height: 100%;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    margin: 0;
 }
 
 .bcit-wrapper {
     background-color: #ffffff;
     width: 100%;
-    max-width: 950px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 8px;
+    max-width: 50rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .bcit-header, .bcit-footer {
     text-align: center;
+    height: 5rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.bcit-header a {
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.bcit-footer {
+    justify-content: center;
 }
 
 .bcit-main-content {
     display: flex;
+    column-gap: 5rem;
     justify-content: space-between;
-    margin-top: 20px;
+    padding: 2rem;
+    align-self: center;
 }
 
 .bcit-form-section {
     flex-basis: 45%;
 }
 
+#auth_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
 .bcit-info-section {
     flex-basis: 50%;
     padding-left: 20px; /* Provides space between columns */
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-top: 1rem;
+}
+
+.bcit-info-section * {
+    margin: unset;
 }
 
 input[type="text"], input[type="password"] {
@@ -46,7 +78,9 @@ input[type="text"], input[type="password"] {
 }
 
 input[type="submit"] {
-    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 8rem;
     padding: 10px;
     background-color: #003C71;
     color: white;
