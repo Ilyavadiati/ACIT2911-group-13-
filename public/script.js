@@ -44,4 +44,3 @@ document.addEventListener('DOMContentLoaded', function() {
         return regex.test(password);
     }
 });
-
