@@ -28,23 +28,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const stars = document.querySelectorAll('.star-rating .star');
 
-stars.forEach((star, index) => {
-  star.addEventListener('click', () => {
+// mainly use addEventListener and classList.remove or classList.add to manipulate the star's state
+stars.forEach((star, index) => { // forEach(element, key) will call the callbackFn for each element of this array, and forEach API will automatically pass in the element as the callbackFn's(user-defined) parameter
+  star.addEventListener('click', () => { // Actually needs two features here, one is adding stars, one is canceling stars
     // Remove the selected class from all stars
-    stars.forEach(s => s.classList.remove('selected'));
+    stars.forEach(s => s.classList.remove('selected')); // classList can be used for html elememt to manipulate its class name controlling its css style; remove() method will not throw an error even if there is no this 'selected' class right now
     // Add the selected class back to the star clicked and those before it
     for (let i = 0; i <= index; i++) {
       stars[i].classList.add('selected');
     }
     // Output the rating
-    console.log(`Rating is ${index + 1}`);
+    console.log(`Rating is ${index + 1}`); // {index + 1} cus array's index starts from 0, but user usually reads from 1 
   });
 
-  // Optional: Add hover effect to stars
-  star.addEventListener('mouseover', () => {
+  // Optional: Add hover effect to stars (2 states here: one is hovering, another is mouse leaving)
+  star.addEventListener('mouseover', () => { // mouseover is hover actually
     // Add hover class to all stars up to the one hovered
     stars.forEach((s, i) => {
-      if (i <= index) s.classList.add('hover');
+      if (i <= index) s.classList.add('hover'); // the 'if and else' statements can be used without curly braces {} if there is only one statement to be executed in the block. This is known as an "inline" or "single-line" if/else statement.
       else s.classList.remove('hover');
     });
   });
@@ -54,4 +55,7 @@ stars.forEach((star, index) => {
     stars.forEach(s => s.classList.remove('hover'));
   });
 });
+
+
+
 
