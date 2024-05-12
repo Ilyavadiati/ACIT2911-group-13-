@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Raing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="rating.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+    <div class="main-section-wrapper">
+        <label for="courseSelect">Choose a course:</label>
+        <select id="courseSelect">
+            <option value="">Select a course</option>
+            <option value="ACIT 1420">ACIT 1420 - Introduction to Systems Administration</option>
+            <option value="ACIT 1515">ACIT 1515 - Scripting for IT</option>
+            <option value="ACIT 1620">ACIT 1620 - Fundamental Web Technologies</option>
+            <option value="ACIT 1630">ACIT 1630 - Database Systems</option>
+            <option value="ACIT 1116">COMM 1116 - Business Communications 1</option>
+            <option value="ACIT 1310">MATH 1310 - Technical Math for IT</option>
+            <option value="ACIT 1100">ORGB 1100 - Organizational Behaviour</option>
+            <option value="ACIT 2420">ACIT 2420 - Linux System Administration</option>
+            <option value="ACIT 2515">ACIT 2515 - Object Oriented Programming</option>
+            <option value="ACIT 2520">ACIT 2520 - Developing Web Applications</option>
+            <option value="ACIT 2620">ACIT 2620 - Principles of Enterprise Networking</option>
+            <option value="ACIT 2811">ACIT 2811 - UX/UI Development</option>
+            <option value="ACIT 2831">ACIT 2831 - Business Systems Analysis</option>
+            <option value="ACIT 2911">ACIT 2911 - Agile Development Project</option>
+            <option value="ACIT 4770">ACIT 4770 - Legal and Ethical Issues in IT</option>
+            <option value="ACIT 2216">COMM 2216 - Business Communications 2</option>
+            <option value="MATH 1350">MATH 1350 - Statistics for Information Technology</option>
+        </select>
+        <div id="selectedCourse">Selected Course: <span id="displayArea"></span></div>
+
+        <div id="star-rating" class="star-rating">
+            <span class="star">
+                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+        </div>
+
+
+          
+
+
+     
+
+    
+
+    </div>
+
+    <script src="rating.js"></script>
+</body>
+</html>
