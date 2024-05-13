@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+select {
+    width: 300px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid black;
+}
+
+#selectedCourse {
+    margin-top: 20px;
+}
+
+.star-rating{
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+}
+
+.star-rating .star {
+    font-size: 30px;
+    cursor: pointer;
+    color: lightgray;
+  }
+  
+  .star-rating .star.hover, .star-rating .star:hover {
+    color: orange;
+  }
+  
+  .star-rating .star.selected {
+    color: gold;
+  }
+  
