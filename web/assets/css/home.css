@@ -89,7 +89,7 @@ header .logo {
 
 #title {
     height: 400px;
-    background-image: url(../assets/images/bcit-big-info.png);
+    background-image: url(../images/bcit-big-info.png);
     color: #ffffff;
     text-align: left;
     padding-left: 20px;
@@ -229,14 +229,14 @@ main section {
 }
 
 .image-section-course {
-    background-image: url(../assets/images/bcit-big-info.png);
+    background-image: url(../images/bcit-big-info.png);
     background-size: cover;
     background-position: center;
     height: 150px; /* Half the total height you desire */
 }
 
 .image-section-instructor {
-    background-image: url(../assets/images/elon-musk.jpg);
+    background-image: url(../images/elon-musk.jpg);
     background-size: cover;
     background-position: center;
     height: 150px; /* Half the total height you desire */

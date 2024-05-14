@@ -8,12 +8,26 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
+app.use('/assets', express.static(path.join(__dirname, 'web/assets')));
+
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'website.html'));
+    res.sendFile(path.join(__dirname, 'web/home', 'home.html'));
+});
+
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'web/login', 'login.html'));
 });
 
 app.get('/signup', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'signup.html'));
+    res.sendFile(path.join(__dirname, 'web/signup', 'signup.html'));
+});
+
+app.get('/reviews', (req, res) => {
+    res.sendFile(path.join(__dirname, 'web/reviews', 'reviews.html'));
+});
+
+app.get('/rating', (req, res) => {
+    res.sendFile(path.join(__dirname, 'web/rating', 'rating.html'));
 });
 
 // Ensure userData.json exists or create an empty one

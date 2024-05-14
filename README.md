@@ -18,10 +18,12 @@ Developed by Ilya, Sina, Hitarth, Mellaad, William, and Darcy
 │ └── ...           # Other pages
 ```
 
-## Installation
+## Install dependencies
 ```
 npm install
 ```
 
-## Web Entry Point
-`web/home/index.html`
+## Run the application
+```
+npm run start
+```
