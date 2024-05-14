@@ -9,18 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
         <nav class="menubar">
             <ul>
-                <li><button class="menu-button" onclick="location.href='login.html'">Login</button></li>
-                <li><button class="menu-button" onclick="location.href='signup.html'">Sign Up</button></li>
+                <a href="../Login/login.html"><button class="menu-button cursor-pointer">Login</button></a>
+                <a href="../Sign_up/Signup.html"><button class="menu-button cursor-pointer">Sign Up</button></a>
             </ul>
         </nav>
         <div class="header">
             <img src="images/logo.svg" alt="BCIT Logo" class="logo">
             <ul>
+                <!-- TODO: Fix these buttons as well -->
                 <li><button class="header-button" onclick="location.href='login.html'">Review</button></li>
                 <li><button class="header-button" onclick="location.href='signup.html'">Add Review</button></li>
             </ul>
