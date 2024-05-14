@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BCIT Sign-up</title>
+    <link rel="stylesheet" href="styless.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="script.js"
+</head>
+<body class="bcit bcit-login">
+    <div id="bcit-wrapper" class="bcit-wrapper">
+        <header class="bcit-header mt-12">
+            <!-- <span id="page_header" class="bcit-hidden" data-js="bcit-f5-js-bug-fix"></span> -->
+            <!-- <h1 class="bcit-hidden-visually" style="border:0 !important;clip:rect(0 0 0 0) !important;clip-path:inset(50%) !important;height:1px !important;margin:-1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;white-space:nowrap !important;width:1px !important">BCIT Log-in</h1> -->
+            <!-- <a href="https://www.bcit.ca/" class="bcit-home-link"><svg viewBox="0 0 95 85" xmlns="http://www.w3.org/2000/svg" class="bcit-logo" style="max-width:75px;"><path fill="#003C71" d="M0 0h84.8v84.8H0z"></path><path fill="#FFFFFF" d="M8.6 56.4V27.2h7.2c6.7 0 9.7 2.2 9.7 7.6 0 3-1.3 5.1-3.8 6.2v.1c3.3 1.2 4.5 3.7 4.5 7 0 6.7-4.3 8.4-10 8.4H8.6v-.1zm7.4-17c2.5 0 4.7-.9 4.7-4.1 0-3.1-2.3-3.7-4.7-3.7h-2.7v7.8H16zm.5 12.7c3.4 0 4.8-1.2 4.8-4.3 0-3.2-1.6-4.5-4.8-4.5h-3.2v8.8h3.2zm30.9-5.2c-.9 6.5-3.6 9.9-8.9 9.9-7 0-9.3-5.7-9.3-15.1 0-8.4 2.4-14.8 9.3-14.8 5.6 0 7.8 3.5 8.6 9.4l-4.5.4c-.6-3.7-1.9-5.5-4-5.5-3 0-4.5 3.1-4.5 10.5 0 8.1 1.3 10.8 4.5 10.8 2.3 0 3.7-2.1 4.3-6.1l4.5.5zm4.1 9.5V27.2h4.8v29.2h-4.8zm14.8 0V31.6h-6v-4.4h16.8v4.4h-6v24.8h-4.8z"></path><path fill="#003C71" d="M89.426 3.253c.462 0 .84-.13.84-.625 0-.478-.408-.566-.826-.566h-.64v1.19h.626zm.885 2.15l-.77-1.554H88.8v1.554h-.71V1.454h1.304c.973 0 1.572.333 1.572 1.16 0 .48-.248.858-.742 1.046l.899 1.743h-.812zM92.126 3.5c0-1.584-.99-2.86-2.716-2.86-1.743 0-2.744 1.276-2.744 2.86 0 1.627 1 2.862 2.744 2.862 1.727 0 2.716-1.235 2.716-2.862zM86 3.5C86 1.54 87.288 0 89.41 0c2.12 0 3.398 1.54 3.398 3.5 0 1.916-1.278 3.5-3.398 3.5C87.288 7 86 5.416 86 3.5z"></path></svg></a>-->
+            <img class="h-full" src="/images/logo.svg"/>
+            <div class="bcit-tools">
+                      <i id="maxTimeoutTag" title=""></i>
+            </div>
+          </header>
+
+        <div class="bcit-main-content shadow-2xl">
+            <div class="bcit-form-section">
+                <form id="auth_form" autocomplete="off">
+                    <h2 class="bcit-heading text-4xl py-4">Sign up</h2>
+
+
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Enter your username" autocomplete="off" autocapitalize="off">
+
+                    <label for="email">BCIT email</label>
+                    <input type="text" name="email" id="email" placeholder="user@bcit.ca or user@my.bcit.ca" autocomplete="off" autocapitalize="off">
+
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Enter Your Password" autocomplete="off" autocapitalize="off">
+
+                    
+                    <!-- <label for="birthday">Date of Birth</label>
+                    <input type="date" id="birthday" name="birthday"> -->
+
+                    <input type="submit" value="Sign up" class="bcit-button">
+
+                    <p><a href="#">Forgot your BCIT email or password?</a></p>
+                </form>
+            </div>
+            
+            <div class="bcit-info-section justify-center items-center">
+                <!-- <p>The resource you've requested is restricted to BCIT students, staff or faculty only. Enter your BCIT email and password to continue.</p>
+                <h3>Important</h3>
+                <p>When finished your session, be sure to completely log out of all applications and close/quit all browsers. This will improve security and prevent others from using your access.</p> -->
+                <!-- <h3>Need help?</h3>
+                <p>If you are having trouble logging in, there may be an issue with your credentials (BCIT email and/or password). <a href="#">Get help</a>.</p> -->
+                <h3 class="font-extrabold">Course Clarity</h3>
+                <p class="text-xl italic">Let's get connected</p>
+            </div>
+        </div>
+        
+        <footer class="bcit-footer text-sm">
+            <p>By signing in, you agree to our <a href="#">Acceptable Use and Security policies</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>

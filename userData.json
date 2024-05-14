@@ -1,0 +1,41 @@
+{
+    "users": [
+      {
+        "username": "Ilyava",
+        "email": "Ivadiati@my.bcit.ca",
+        "password": "Ilyava1@"
+      },
+      {
+        "username": "JohnDoe123",
+        "email": "johndoe@my.bcit.ca",
+        "password": "JohnD123@"
+      },
+      {
+        "username": "KarinaSky",
+        "email": "KarinaSky@my.bcit.ca",
+        "password": "SkyKarina2024!"
+      }
+
+
+
+
+
+
+
+
+
+      
+    ],
+    "project": {
+      "name": "your-project-name",
+      "version": "1.0.0",
+      "description": "Your project description",
+      "main": "server.js",
+      "scripts": {
+        "test-signup": "curl -X POST -H \"Content-Type: application/json\" -d '{\"username\": \"testuser\", \"email\": \"test@example.com\", \"password\": \"testpass\", \"birthday\": \"2000-01-01\"}' http://localhost:3000/signup"
+      },
+      "author": "Your Name",
+      "license": "ISC"
+    }
+  }
+  
