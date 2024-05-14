@@ -17,3 +17,11 @@ Developed by Ilya, Sina, Hitarth, Mellaad, William, and Darcy
 │ ├── home/         # Home page
 │ └── ...           # Other pages
 ```
+
+## Installation
+```
+npm install
+```
+
+## Web Entry Point
+`web/home/index.html`
