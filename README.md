@@ -13,6 +13,7 @@ Developed by Ilya, Sina, Hitarth, Mellaad, William, and Darcy
 ├── web/            # Client-side code
 │ ├── assets/       # Reusable assets
 │ │ ├── images/     # Images
+│ │ └── css/        # CSS files
 │ │ └── js/         # JavaScript files
 │ ├── home/         # Home page
 │ └── ...           # Other pages
@@ -27,3 +28,4 @@ npm install
 ```
 npm run start
 ```
+Open http://localhost:3000 in your browser.
