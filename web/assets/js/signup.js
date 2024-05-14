@@ -16,7 +16,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
                 }
-            });
+            })
+
+            .then(response => {
+                if (response.status === 200) {
+                    alert('Account created successfully! Please login to continue.');
+                    window.location.href = '/login';
+                } else {
+                    alert('An error occurred. Please try again.');
+                }
+            
+            })
         }
     });
 
