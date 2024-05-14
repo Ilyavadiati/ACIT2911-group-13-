@@ -6,14 +6,14 @@ Course Clarity is a unique web-based platform that allows BCIT students to provi
 Developed by Ilya, Sina, Hitarth, Mellaad, William, and Darcy
 
 
-
+## File Structure
 ```
 /
 ├── server.js       # Main server logic
 ├── web/            # Client-side code
 │ ├── assets/       # Reusable assets
-│ │ ├── images/     # Images used across different pages
-│ │ └── js/         # JavaScript files used across different pages
+│ │ ├── images/     # Images
+│ │ └── js/         # JavaScript files
 │ ├── home/         # Home page
 │ └── ...           # Other pages
 ```
