@@ -6,6 +6,9 @@ function login() {
         password: 'pass'
     };
 
+    const response = fetch("localhost:3000/allReviews");
+    document.getSelection("reviews").innerHTML = response;
+
     // store user in local storage
     setUser(user);
 }
