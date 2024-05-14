@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Raing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="rating.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/main.js" defer></script>
+
+</head>
+<body>
+    <div class="main-section-wrapper">
+
+        <form class="ml-0 max-w-sm mx-auto">
+            <label for="courseSelect" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+            <select id="courseSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+              <option selected>Choose a course</option>
+              <option value="ACIT 1420">ACIT 1420 - Introduction to Systems Administration</option>
+              <option value="ACIT 1515">ACIT 1515 - Scripting for IT</option>
+              <option value="ACIT 1620">ACIT 1620 - Fundamental Web Technologies</option>
+              <option value="ACIT 1630">ACIT 1630 - Database Systems</option>
+              <option value="COMM 1116">COMM 1116 - Business Communications 1</option>
+              <option value="MATH 1310">MATH 1310 - Technical Math for IT</option>
+              <option value="ORGB 1100">ORGB 1100 - Organizational Behaviour</option>
+              <option value="ACIT 2420">ACIT 2420 - Linux System Administration</option>
+              <option value="ACIT 2515">ACIT 2515 - Object Oriented Programming</option>
+              <option value="ACIT 2520">ACIT 2520 - Developing Web Applications</option>
+              <option value="ACIT 2620">ACIT 2620 - Principles of Enterprise Networking</option>
+              <option value="ACIT 2811">ACIT 2811 - UX/UI Development</option>
+              <option value="ACIT 2831">ACIT 2831 - Business Systems Analysis</option>
+              <option value="ACIT 2911">ACIT 2911 - Agile Development Project</option>
+              <option value="ACIT 4770">ACIT 4770 - Legal and Ethical Issues in IT</option>
+              <option value="COMM 2216">COMM 2216 - Business Communications 2</option>
+              <option value="MATH 1350">MATH 1350 - Statistics for Information Technology</option>
+
+            </select>
+          </form>
+        <!-- <label for="courseSelect">Choose a course:</label>
+        <select id="courseSelect">
+            <option value="">Select a course</option>
+            <option value="ACIT 1420">ACIT 1420 - Introduction to Systems Administration</option>
+            <option value="ACIT 1515">ACIT 1515 - Scripting for IT</option>
+            <option value="ACIT 1620">ACIT 1620 - Fundamental Web Technologies</option>
+            <option value="ACIT 1630">ACIT 1630 - Database Systems</option>
+            <option value="ACIT 1116">COMM 1116 - Business Communications 1</option>
+            <option value="ACIT 1310">MATH 1310 - Technical Math for IT</option>
+            <option value="ACIT 1100">ORGB 1100 - Organizational Behaviour</option>
+            <option value="ACIT 2420">ACIT 2420 - Linux System Administration</option>
+            <option value="ACIT 2515">ACIT 2515 - Object Oriented Programming</option>
+            <option value="ACIT 2520">ACIT 2520 - Developing Web Applications</option>
+            <option value="ACIT 2620">ACIT 2620 - Principles of Enterprise Networking</option>
+            <option value="ACIT 2811">ACIT 2811 - UX/UI Development</option>
+            <option value="ACIT 2831">ACIT 2831 - Business Systems Analysis</option>
+            <option value="ACIT 2911">ACIT 2911 - Agile Development Project</option>
+            <option value="ACIT 4770">ACIT 4770 - Legal and Ethical Issues in IT</option>
+            <option value="ACIT 2216">COMM 2216 - Business Communications 2</option>
+            <option value="MATH 1350">MATH 1350 - Statistics for Information Technology</option>
+        </select> -->
+        <div id="selectedCourse">Selected Course: <span id="displayArea" class="underline text-2xl font-extrabold dark:text-white"></span></div>
+
+        <div id="star-rating" class="star-rating">
+            <span class="star">
+                <svg class="w-6 h-6 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-6 h-6 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-6 h-6 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-6 h-6 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+            <span class="star">
+                <svg class="w-6 h-6 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+            </span>
+
+        </div>
+
+        <div class="review-wrapper mt-6">
+            <div class="review-title mb-3">Your Review</div>
+
+
+<form>
+    <div class="w-2/3  mb-4 border border-gray-200 rounded-lg bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
+        <div class="px- py-2 bg-white rounded-t-lg dark:bg-gray-800">
+            <label for="comment" class="sr-only">Your comment</label>
+            <textarea id="comment" rows="6" class="w-full px-0 text-sm text-gray-900 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write a comment..." required ></textarea>
+        </div>
+        <div class="flex items-center justify-between px-3 py-2 border-t dark:border-gray-600">
+            <button type="submit" class="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800">
+                Post comment
+            </button>
+            <!-- <div class="flex ps-0 space-x-1 rtl:space-x-reverse sm:ps-2">
+                <button type="button" class="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 12 20">
+                         <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M1 6v8a5 5 0 1 0 10 0V4.5a3.5 3.5 0 1 0-7 0V13a2 2 0 0 0 4 0V6"/>
+                     </svg>
+                    <span class="sr-only">Attach file</span>
+                </button>
+                <button type="button" class="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">
+                         <path d="M8 0a7.992 7.992 0 0 0-6.583 12.535 1 1 0 0 0 .12.183l.12.146c.112.145.227.285.326.4l5.245 6.374a1 1 0 0 0 1.545-.003l5.092-6.205c.206-.222.4-.455.578-.7l.127-.155a.934.934 0 0 0 .122-.192A8.001 8.001 0 0 0 8 0Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
+                     </svg>
+                    <span class="sr-only">Set location</span>
+                </button>
+                <button type="button" class="inline-flex justify-center items-center p-2 text-gray-500 rounded cursor-pointer hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600">
+                    <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                         <path d="M18 0H2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm4.376 10.481A1 1 0 0 1 16 15H4a1 1 0 0 1-.895-1.447l3.5-7A1 1 0 0 1 7.468 6a.965.965 0 0 1 .9.5l2.775 4.757 1.546-1.887a1 1 0 0 1 1.618.1l2.541 4a1 1 0 0 1 .028 1.011Z"/>
+                     </svg>
+                    <span class="sr-only">Upload image</span>
+                </button>
+            </div> -->
+        </div>
+    </div>
+ </form>
+ <p class="ms-auto text-xs text-gray-500 dark:text-gray-400">Remember, contributions to this topic should follow our <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">Community Guidelines</a>.</p>
+ 
+            
+
+
+        </div>
+
+          
+
+
+     
+
+    
+
+    </div>
+
+    <script src="rating.js"></script>
+</body>
+</html>

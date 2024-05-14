@@ -1,0 +1,131 @@
+html {
+    height: 100%;
+}
+body {
+    font: 400 normal 100%/1.78 "Nunito Sans", Arial, sans-serif;
+    height: 100%;
+    font-family: "Nunito Sans", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #003C71;
+}
+
+.bcit-wrapper {
+    background-color: transparent;
+    width: 100%;
+    max-width: 50rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bcit-header, .bcit-footer {
+    text-align: center;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.bcit-header a {
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+.bcit-footer {
+    justify-content: center;
+    color: white;
+}
+
+.bcit-footer a {
+    color: lightgray;
+}
+
+.bcit-main-content {
+    display: flex;
+    column-gap: 5rem;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: gray 2px;
+    /* align-self: center; */
+}
+
+.bcit-form-section {
+    flex-basis: 45%;
+    padding: 2rem;
+}
+
+#auth_form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+
+.bcit-info-section {
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    color:#ffffff;
+    flex-basis: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding-top: 1rem;
+    background: linear-gradient(
+        rgba(24, 4, 49, 0.6), 
+        rgba(1, 1, 14, 0.879)
+    ), url('../assets/images/bcit-alumni.jpg');
+    background-size: cover;
+    background-position: center;
+    background-size: 500px;
+}
+
+.bcit-info-section * {
+    margin: unset;
+}
+
+
+.bcit-info-section h3 {
+    font-size: 2.5rem;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 8rem;
+    padding: 10px;
+    background-color: #003C71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #002744;
+}
+
+a {
+    color: #003C71;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.bcit-footer {
+    margin-top: 20px;
+    font-size: 12px;
+}
