@@ -309,6 +309,21 @@
       "username": "123",
       "email": "123@my.bcit.ca",
       "password": "123456@Agile"
+    },
+    {
+      "username": "1234",
+      "email": "1234@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "1234",
+      "email": "1234@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123456",
+      "email": "123456@my.bcit.ca",
+      "password": "123456@Agile"
     }
   ],
   "project": {
