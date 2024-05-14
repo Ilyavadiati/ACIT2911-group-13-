@@ -1,15 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('auth_form');
-    form.addEventListener('submit', function(event) {
+    const submitButton = document.getElementById('signup-submit');
+    submitButton.addEventListener('click', function(event) {
         // Prevent form submission if validation fails
         if (!validateForm()) {
             event.preventDefault();
         } else {
-            // Simulate form submission to server
-            // For demonstration, we use setTimeout to mimic asynchronous behavior like a server response
-            setTimeout(() => {
-                window.location.href = '/login.html'; // Redirect to login page on successful sign-up
-            }, 1000); // Delay for demonstration purposes
+            fetch("/signup", {
+                method: "POST",
+                body: JSON.stringify({
+                    username: form.username.value,
+                    email: form.email.value,
+                    password: form.password.value
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            });
         }
     });
 

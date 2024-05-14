@@ -50,7 +50,7 @@ app.post('/signup', (req, res) => {
             return res.status(500).send('Error reading user data');
         }
         let userData = JSON.parse(data);
-        userData.push(newUser);
+        userData.users.push(newUser);
 
         fs.writeFile(dataPath, JSON.stringify(userData, null, 2), (writeErr) => {
             if (writeErr) {
