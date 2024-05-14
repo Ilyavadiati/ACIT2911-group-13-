@@ -274,6 +274,41 @@
       "username": "will",
       "email": "will@my.bcit.ca",
       "password": "123456@Agile"
+    },
+    {
+      "username": "will",
+      "email": "will@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123",
+      "email": "123@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123",
+      "email": "123@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123",
+      "email": "123@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123",
+      "email": "123@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123",
+      "email": "123@my.bcit.ca",
+      "password": "123456@Agile"
+    },
+    {
+      "username": "123",
+      "email": "123@my.bcit.ca",
+      "password": "123456@Agile"
     }
   ],
   "project": {
