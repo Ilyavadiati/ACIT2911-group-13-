@@ -62,6 +62,16 @@ app.post('/signup', (req, res) => {
     });
 });
 
+app.post('/rating', (req, res) => {
+    const newRating = {
+        rating: req.body.rating,
+        course: req.body.course,
+        comment: req.body.comment
+    };
+    // TODO: persist in db
+    res.send('Rating submitted successfully!');
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
