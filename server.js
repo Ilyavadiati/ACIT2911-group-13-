@@ -95,15 +95,26 @@ app.post('/signup', (req, res) => {
     });
 });
 
+
+
 app.post('/rating', (req, res) => {
-    const newRating = {
-        rating: req.body.rating,
+    const newRating = new Review({
+        _id: req.body._id,
+        username: req.body.username,
         course: req.body.course,
-        comment: req.body.comment
-    };
-    // TODO: persist in db
-    res.send('Rating submitted successfully!');
+        rating: req.body.rating,
+        comment: req.body.comment,
+        date: new Date(req.body.date) // Ensuring the date is properly formatted as a Date object
+    });
+
+    newRating.save() // Saving the new rating document in the database
+        .then(() => res.send('Rating submitted successfully!'))
+        .catch(err => {
+            console.error('Error saving the rating', err);
+            res.status(500).send('Failed to submit rating');
+        });
 });
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);

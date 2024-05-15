@@ -13,7 +13,7 @@ function renderReviews(data) {
     // Clear previous content
     elementToRender.innerHTML = '';
 
-    data.forEach(review => {
+    data.forEach(review => { 
         const reviewDiv = document.createElement('div');
         reviewDiv.className = 'grid grid-cols-12 max-w-sm sm:max-w-full mx-auto pb-8 border-b border-gray-100';
         reviewDiv.innerHTML = `
