@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const path = require('path');
+const getDb = require('./db');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -22,8 +23,14 @@ app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, 'web/signup', 'signup.html'));
 });
 
-app.get('/reviews', (req, res) => {
+app.get('/reviews', async (req, res) => {
     res.sendFile(path.join(__dirname, 'web/reviews', 'reviews.html'));
+});
+
+app.get('/api/reviews', async (req, res) => {
+    const db = await getDb;
+    const data = await db.collection('reviews').find({}).toArray();
+    res.send(data);
 });
 
 app.get('/rating', (req, res) => {
