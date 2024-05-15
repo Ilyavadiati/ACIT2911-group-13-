@@ -4,6 +4,9 @@ const app = express();
 const PORT = 3000;
 const path = require('path');
 const getDb = require('./db');
+const mongoose = require('./db');
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -27,11 +30,34 @@ app.get('/reviews', async (req, res) => {
     res.sendFile(path.join(__dirname, 'web/reviews', 'reviews.html'));
 });
 
+// app.get('/api/reviews', async (req, res) => {
+//     const db = await getDb;
+//     const data = await db.collection('reviews').find({}).toArray();
+//     res.send(data);
+// });
+
+// Define a schema for "reviews"
+const reviewSchema = new mongoose.Schema({
+    _id: String, // Assuming MongoDB default _id is overridden by your custom id
+    date: Date,
+    username: String,
+    course: String,
+    rating: Number,
+    comment: String
+}, { collection: 'reviews' });
+
+const Review = mongoose.model('Review', reviewSchema);
+
 app.get('/api/reviews', async (req, res) => {
-    const db = await getDb;
-    const data = await db.collection('reviews').find({}).toArray();
-    res.send(data);
+    try {
+        const data = await Review.find(); // Fetch all documents
+        res.send(data);
+    } catch (error) {
+        res.status(500).send('Error fetching reviews: ' + error.message);
+    }
 });
+
+
 
 app.get('/rating', (req, res) => {
     res.sendFile(path.join(__dirname, 'web/rating', 'rating.html'));
@@ -82,3 +108,5 @@ app.post('/rating', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+
