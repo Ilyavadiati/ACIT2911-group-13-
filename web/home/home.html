@@ -10,14 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../assets/js/main.js" defer></script>
+    <script type="module" src="../assets/js/home.js" defer></script>
 </head>
 <body>
     <header>
         <nav class="menubar">
-            <ul>
-                <a href="/login"><button class="menu-button cursor-pointer">Login</button></a>
-                <a href="/signup"><button class="menu-button cursor-pointer">Sign Up</button></a>
+            <ul class="h-16">
+                <div id="user" class="h-min self-center px-8 text-base"></div>
+                <a id="login" href="/login"><button class="menu-button cursor-pointer">Login</button></a>
+                <a id="signup" href="/signup"><button class="menu-button cursor-pointer">Sign Up</button></a>
+                <a id="logout"><button class="menu-button cursor-pointer">Log Out</button></a>
             </ul>
         </nav>
         <div class="header">

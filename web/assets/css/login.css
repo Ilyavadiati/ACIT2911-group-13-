@@ -101,7 +101,7 @@ input[type="text"], input[type="password"] {
     border-radius: 4px;
 }
 
-input[type="submit"] {
+#login-submit {
     margin-top: 1rem;
     margin-bottom: 1rem;
     width: 8rem;
@@ -113,7 +113,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+#login-submit:hover {
     background-color: #002744;
 }
 
