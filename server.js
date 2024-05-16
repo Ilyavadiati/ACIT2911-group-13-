@@ -5,6 +5,11 @@ const PORT = 3000;
 const path = require('path');
 const getDb = require('./db');
 const mongoose = require('./db');
+const User = require('./module/user');
+const bcrypt = require('bcryptjs');
+const session = require('express-session');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 
 
 
@@ -57,8 +62,6 @@ app.get('/api/reviews', async (req, res) => {
     }
 });
 
-
-
 app.get('/rating', (req, res) => {
     res.sendFile(path.join(__dirname, 'web/rating', 'rating.html'));
 });
@@ -70,29 +73,21 @@ if (!fs.existsSync(dataPath)) {
 }
 
 app.post('/signup', (req, res) => {
-    const newUser = {
+    const newUser = new User({
         username: req.body.username,
         email: req.body.email,
-        password: req.body.password, // Consider hashing this before storing
-        
-    };
-
-    fs.readFile(dataPath, 'utf8', (err, data) => {
-        if (err) {
-            console.error('Error reading the userData.json:', err);
-            return res.status(500).send('Error reading user data');
-        }
-        let userData = JSON.parse(data);
-        userData.users.push(newUser);
-
-        fs.writeFile(dataPath, JSON.stringify(userData, null, 2), (writeErr) => {
-            if (writeErr) {
-                console.error('Error writing to userData.json:', writeErr);
-                return res.status(500).send('Error saving user data');
-            }
-            res.send('Signup successful!');
-        });
+        password: req.body.password
     });
+
+    newUser.save()
+        .then(() => res.send('Signup successful!'))
+        .catch(err => {
+            console.error('Error saving user to database:', err);
+            if (err.code === 11000) { // Handle duplicate key error
+                return res.status(400).send('Username or email already exists.');
+            }
+            res.status(500).send('Error signing up');
+        });
 });
 
 
@@ -104,7 +99,7 @@ app.post('/rating', (req, res) => {
         course: req.body.course,
         rating: req.body.rating,
         comment: req.body.comment,
-        date: new Date(req.body.date) // Ensuring the date is properly formatted as a Date object
+        date: new Date(req.body.date) 
     });
 
     newRating.save() // Saving the new rating document in the database
@@ -115,6 +110,79 @@ app.post('/rating', (req, res) => {
         });
 });
 
+
+app.use(session({
+    secret: 'your_secret_key',
+    resave: false,
+    saveUninitialized: false
+}));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport local strategy for user authentication
+passport.use(new LocalStrategy({ usernameField: 'email' }, async function(email, password, done) {
+    try {
+        const user = await User.findOne({ email: email }).exec();
+        if (!user) {
+            return done(null, false, { message: 'Incorrect email.' });
+        }
+    
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return done(null, false, { message: 'Incorrect password.' });
+        }
+    
+        return done(null, user);
+    } catch (err) {
+        return done(err);
+    }
+}));
+
+// Serialize user into the sessions
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+
+// Deserialize user from the sessions
+passport.deserializeUser(async (id, done) => {
+    try {
+        const user = await User.findById(id).exec();
+        done(null, user);
+    } catch (err) {
+        done(err);
+    }
+});
+
+// Login route
+app.post('/api/login', (req, res) => {
+    passport.authenticate('local', (err, user, info) => {
+        if (err) {
+            return res.status(500).json({ message: err.message });
+        }
+        if (!user) {
+            // Assuming `info` contains the reason for authentication failure
+            return res.status(401).json(info);
+        }
+        // Manually establish the login session
+        req.logIn(user, (err) => {
+            if (err) {
+                return res.status(500).json({ success: false, message: err.message });
+            }
+            return res.json({
+                success: true,
+                email: user.email,
+                username: user.username,
+            }); // Send the user information as JSON
+        });
+    })(req, res);
+});
+
+// Failure route
+app.get('/login-failure', (req, res) => {
+    res.status(401).json({ success: false, message: 'Invalid username or password.' });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
