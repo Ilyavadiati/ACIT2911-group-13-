@@ -101,4 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
         return selectElement.value;
     }
 
-
+    document.addEventListener('DOMContentLoaded', function() {
+        setupCourseSelection();
+        setupStarRating();
+        setupFormSubmission();
+    });
+    
+    module.exports = {
+        setupCourseSelection,
+        setupStarRating,
+        setupFormSubmission,
+        validateForm,
+        getRating,
+        getCourse,
+    };
+    
