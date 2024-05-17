@@ -1,3 +1,4 @@
+import { getUser } from './userSession.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const selectElement = document.getElementById('courseSelect');
@@ -31,7 +32,10 @@ stars.forEach((star, index) => {
   });
 });
 
+
 document.addEventListener('DOMContentLoaded', function() {
+    
+    const user = getUser();
     const form = document.getElementById('rating_form');
     const submitButton = document.getElementById('rating-submit');
     submitButton.addEventListener('click', function(event) {
@@ -41,12 +45,17 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             const rating = getRating();
             const course = getCourse();
+            const username = user.username; // Replace with actual username
+            const date = new Date(); 
             fetch("/rating", {
                 method: "POST",
                 body: JSON.stringify({
+                    _id: new Date().getTime().toString(), // consider to use a timestamp as an ID (for uniqueness)
                     rating: rating,
                     course: course,
-                    comment: form.comment.value
+                    comment: form.comment.value,
+                    username: username,
+                    date: date
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -64,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
         }
     });
+});
 
     function validateForm() {
         if (!getRating()) {
@@ -90,5 +100,5 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectElement = document.getElementById('courseSelect');
         return selectElement.value;
     }
-})
+
 
