@@ -47,6 +47,7 @@ const reviewSchema = new mongoose.Schema({
     date: Date,
     username: String,
     course: String,
+    instructor: String,
     rating: Number,
     comment: String
 }, { collection: 'reviews' });
@@ -99,6 +100,7 @@ app.post('/rating', (req, res) => {
         _id: req.body._id,
         username: req.body.username,
         course: req.body.course,
+        instructor: req.body.instructor,
         rating: req.body.rating,
         comment: req.body.comment,
         date: new Date(req.body.date) 

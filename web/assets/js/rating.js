@@ -2,10 +2,12 @@ import { getUser } from './userSession.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const selectElement = document.getElementById('courseSelect');
-    const displayArea = document.getElementById('displayArea');
+    const displayCourse = document.getElementById('displayCourse');
+    const displayInstructor = document.getElementById('displayInstructor');
     selectElement.addEventListener('change', function() { 
         const selectedText = selectElement.options[this.selectedIndex].text;
-        displayArea.textContent = this.value ? `${selectedText}` : '';
+        displayCourse.textContent = this.value ? `${selectedText}` : '';
+        displayInstructor.textContent = this.value ? `${selectElement.options[this.selectedIndex].getAttribute('data-instructor')}` : '';
     });
 });
 
@@ -40,13 +42,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const submitButton = document.getElementById('rating-submit');
     submitButton.addEventListener('click', function(event) {
         // Prevent form submission if validation fails
-        if (!validateForm()) {
+        // if (!validateForm()) {
+        //     event.preventDefault();
+        // } else {
             event.preventDefault();
-        } else {
+
             const rating = getRating();
             const course = getCourse();
             const username = user.username; // Replace with actual username
             const date = new Date(); 
+            const instructor = getInstructor();
             fetch("/rating", {
                 method: "POST",
                 body: JSON.stringify({
@@ -55,7 +60,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     course: course,
                     comment: form.comment.value,
                     username: username,
-                    date: date
+                    date: date,
+                    instructor: instructor
+
                 }),
                 headers: {
                     "Content-type": "application/json; charset=UTF-8"
@@ -71,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             
             })
-        }
+        // }
     });
 });
 
@@ -98,7 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getCourse() {
         const selectElement = document.getElementById('courseSelect');
-        return selectElement.value;
+        // return selectElement.value;
+         return selectElement.options[selectElement.selectedIndex].text
     }
 
+
+    function getInstructor() {
+        const selectElement = document.getElementById('courseSelect');
+        return selectElement.options[selectElement.selectedIndex].getAttribute('data-instructor');
+    }
 
