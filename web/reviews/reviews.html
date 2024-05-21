@@ -4,13 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Reviews</title>
     <script src="../assets/js/reviews.js" defer></script>
 </head>
 <body class="h-full">
     <section class="py-24 relative h-full">
         <div class="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto">
             <h2 class="font-manrope font-bold text-4xl text-black text-center mb-11 py-8">Student Ratings & Reviews</h2>
+            <div id="course-wrapper">
+                <form class="ml-0 max-w-sm mx-auto">
+                    <label for="courseSelect" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a course</label>
+                    <select id="courseSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Choose a course</option>
+                        <option value="ACIT 1420" data-instructor="Uwe Helm">ACIT 1420 - Introduction to Systems Administration</option>
+                        <option value="ACIT 1515" data-instructor="Chris Harris">ACIT 1515 - Scripting for IT</option>
+                        <option value="ACIT 1620" data-instructor="Yves Shema">ACIT 1620 - Fundamental Web Technologies</option>
+                        <option value="ACIT 1630" data-instructor="Ayesha Anzer">ACIT 1630 - Database Systems</option>
+                        <option value="COMM 1116" data-instructor="Matthew Rockall">COMM 1116 - Business Communications 1</option>
+                        <option value="MATH 1310" data-instructor="Sandra Merchant">MATH 1310 - Technical Math for IT</option>
+                        <option value="ORGB 1100" data-instructor="Reena Alias">ORGB 1100 - Organizational Behaviour</option>
+                        <option value="ACIT 2420" data-instructor="Nathan McNinch">ACIT 2420 - Linux System Administration</option>
+                        <option value="ACIT 2515" data-instructor="Tim Guicherd">ACIT 2515 - Object Oriented Programming</option>
+                        <option value="ACIT 2520" data-instructor="Armaan Dhanji">ACIT 2520 - Developing Web Applications</option>
+                        <option value="ACIT 2620" data-instructor="Yves Shema">ACIT 2620 - Principles of Enterprise Networking</option>
+                        <option value="ACIT 2811" data-instructor="Chris Harris">ACIT 2811 - UX/UI Development</option>
+                        <option value="ACIT 2831" data-instructor="Thorsten Ewald">ACIT 2831 - Business Systems Analysis</option>
+                        <option value="ACIT 2911" data-instructor="Armaan Dhanji">ACIT 2911 - Agile Development Project</option>
+                        <option value="ACIT 4770" data-instructor="Trevor Lord">ACIT 4770 - Legal and Ethical Issues in IT</option>
+                        <option value="COMM 2216" data-instructor="Thorsten Ewald">COMM 2216 - Business Communications 2</option>
+                        <option value="MATH 1350" data-instructor="Seyyed Hosseini">MATH 1350 - Statistics for Information Technology</option>
+                    </select>
+                </form>
+            </div>
+
+            <div id="instructor-wrapper">
+                <form class="ml-0 max-w-sm mx-auto">
+                    <label for="instructorSelect" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an instructor</label>
+                    <select id="instructorSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option>Choose an instructor</option>
+                        <option value="Uwe Helm">Uwe Helm</option>
+                        <option value="Chris Harris">Chris Harris</option>
+                        <option value="Yves Shema">Yves Shema</option>
+                        <option value="Ayesha Anzer">Ayesha Anzer</option>
+                        <option value="Matthew Rockall">Matthew Rockall</option>
+                        <option value="Sandra Merchant">Sandra Merchant</option>
+                        <option value="Reena Alias">Reena Alias</option>
+                        <option value="Nathan McNinch">Nathan McNinch</option>
+                        <option value="Tim Guicherd">Tim Guicherd</option>
+                        <option value="Armaan Dhanji">Armaan Dhanji</option>
+                        <option value="Thorsten Ewald">Thorsten Ewald</option>
+                        <option value="Trevor Lord">Trevor Lord</option>
+                        <option value="Seyyed Hosseini">Seyyed Hosseini</option>
+                    </select>
+                </form>
+            </div>
+
             <div id="reviews-list" class="grid grid-cols-1 gap-8">
             </div>
         </div>

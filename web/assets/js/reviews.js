@@ -1,12 +1,60 @@
-fetch("/api/reviews").then(response => {
-    if (response.status === 200) {
-        response.json().then(data => {
-            renderReviews(data);
+
+fetch("/api/reviews")
+    .then(response => {
+        if (response.status === 200) {
+            return response.json();
+        } else {
+            throw new Error('An error occurred. Please try again.');
+        }
+    })
+    .then(data => {
+        renderReviews(data);
+        let selectedCourse;
+        let selectedInstructor;
+
+        const courseSelect = document.getElementById('courseSelect');
+        courseSelect.addEventListener('change', function() {
+            if (this.selectedIndex === 0) {
+                selectedCourse = undefined;
+            } else {
+                selectedCourse = this.options[this.selectedIndex].text;
+            }
+            renderFilteredReviews(); 
         });
-    } else {
-        alert('An error occurred. Please try again.');
-    }
-});
+
+        const instructorSelect = document.getElementById('instructorSelect');
+        instructorSelect.addEventListener('change', function() {
+            if (this.selectedIndex === 0) {
+                selectedInstructor = undefined;
+            } else {
+                selectedInstructor = this.options[this.selectedIndex].text;
+            }
+            renderFilteredReviews();
+        });
+
+        function renderFilteredReviews() {
+            let filteredReviews = data;
+            if (selectedCourse) {
+                filteredReviews = filteredReviews.filter(review => review.course === selectedCourse);
+            }
+            if (selectedInstructor) {
+                filteredReviews = filteredReviews.filter(review => review.instructor === selectedInstructor);
+            }
+            renderReviews(filteredReviews);
+        }
+        
+        
+
+
+
+    })
+    .catch(error => {
+        alert(error.message);
+    });
+
+
+
+
 
 function renderReviews(data) {
     const elementToRender = document.getElementById('reviews-list');
@@ -15,26 +63,23 @@ function renderReviews(data) {
 
     data.forEach(review => { 
         const reviewDiv = document.createElement('div');
-        reviewDiv.className = 'grid grid-cols-12 max-w-sm sm:max-w-full mx-auto pb-8 border-b border-gray-100';
+        reviewDiv.className = 'grid grid-cols-12 w-full pb-8 border-b border-gray-100';
         reviewDiv.innerHTML = `
             <div class="col-span-12 lg:col-span-10">
-                <div class="sm:flex gap-6">
+                <div class="sm:flex gap-6 flex-row w-full" >
                     <img src="assets/images/elon-musk.jpg" alt="${review.username} image" class="w-32 h-32 rounded-full">
-                    <div class="text w-40">
+                        <div class="text w-40 flex  gap-2  "
+                            <div class="font-medium text-lg leading-8 text-gray-900 mb-2" style="flex-basis: fit-content;">${review.course}</div>
+                            <div class="font-medium text-lg leading-8 text-gray-900 mb-2">By ${review.instructor}</div>
+                        </div>
                         <p class="font-medium text-lg leading-8 text-gray-900 mb-2">${review.username}</p>
-                        <div class="flex items-center gap-2 lg:justify-between w-full mb-5">
+                        <div class="flex items-center gap-2  w-full mb-5">
                             ${generateRatingStars(review.rating)}
                         </div>
                         <p class="font-normal text-base leading-7 text-gray-400 mb-4 lg:pr-8">${review.comment}</p>
                         <div class="flex items-center justify-between">
-                            <div class="cursor-pointer flex items-center gap-2">
-                                <a href="javascript:;" class="font-semibold text-lg leading-8 text-indigo-600 whitespace-nowrap">View & Reply</a>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
-                                    <path d="M8.25324 5.49609L13.7535 10.9963L8.25 16.4998" stroke="#4F46E5"
-                                        stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                            <p class="lg:hidden font-medium text-sm leading-7 text-gray-400 lg:text-center whitespace-nowrap">
+                           
+                            <p class="font-medium text-sm leading-7 text-gray-400 lg:text-center whitespace-nowrap">
                                 ${new Date(review.date).toLocaleDateString()}
                             </p>
                         </div>
@@ -62,3 +107,7 @@ function generateRatingStars(rating) {
     }
     return starsHtml;
 }
+
+
+
+

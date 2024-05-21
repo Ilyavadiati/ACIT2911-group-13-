@@ -47,6 +47,7 @@ const reviewSchema = new mongoose.Schema({
     date: Date,
     username: String,
     course: String,
+    instructor: String,
     rating: Number,
     comment: String
 }, { collection: 'reviews' });
@@ -99,6 +100,7 @@ app.post('/rating', (req, res) => {
         _id: req.body._id,
         username: req.body.username,
         course: req.body.course,
+        instructor: req.body.instructor,
         rating: req.body.rating,
         comment: req.body.comment,
         date: new Date(req.body.date) 
@@ -191,3 +193,21 @@ app.listen(PORT, () => {
 });
 
 
+// Account route
+app.get('/account/:username', async (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'web/account', 'account.html'));
+    } catch (error) {
+        res.status(500).send('Error fetching reviews: ' + error.message);
+    }
+});
+
+
+app.get('/api/account/:username', async (req, res) => {
+    try {
+        const data = await Review.find({ username: req.params.username });
+        res.send(data);
+    } catch (error) {
+        res.status(500).send('Error fetching reviews: ' + error.message);
+    }
+});
