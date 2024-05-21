@@ -193,3 +193,21 @@ app.listen(PORT, () => {
 });
 
 
+// Account route
+app.get('/account/:username', async (req, res) => {
+    try {
+        res.sendFile(path.join(__dirname, 'web/account', 'account.html'));
+    } catch (error) {
+        res.status(500).send('Error fetching reviews: ' + error.message);
+    }
+});
+
+
+app.get('/api/account/:username', async (req, res) => {
+    try {
+        const data = await Review.find({ username: req.params.username });
+        res.send(data);
+    } catch (error) {
+        res.status(500).send('Error fetching reviews: ' + error.message);
+    }
+});

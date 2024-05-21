@@ -19,3 +19,11 @@ document.getElementById('logout').addEventListener('click', function(event) {
     localStorage.removeItem('user');
     window.location.href = '/';
 });
+
+// redirect to the account page
+document.getElementById('user').addEventListener('click', function(event) {
+    const user = getUser();
+    if (user) {
+        window.location.href = `/account/${user.username}`;
+    }
+});
