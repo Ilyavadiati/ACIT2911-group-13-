@@ -48,6 +48,7 @@ const reviewSchema = new mongoose.Schema({
     username: String,
     course: String,
     instructor: String,
+    instructor: String,
     rating: Number,
     comment: String
 }, { collection: 'reviews' });
@@ -100,6 +101,7 @@ app.post('/rating', (req, res) => {
         _id: req.body._id,
         username: req.body.username,
         course: req.body.course,
+        instructor: req.body.instructor,
         instructor: req.body.instructor,
         rating: req.body.rating,
         comment: req.body.comment,
@@ -209,5 +211,20 @@ app.get('/api/account/:username', async (req, res) => {
         res.send(data);
     } catch (error) {
         res.status(500).send('Error fetching reviews: ' + error.message);
+    }
+});
+
+app.put('/api/reviews/:id', async (req, res) => {
+    try {
+        const review = await Review.findById(req.params.id);
+        if (!review) {
+            return res.status(404).send('Review not found');
+        }
+        review.rating = req.body.rating;
+        review.comment = req.body.comment;
+        await review.save();
+        res.send(review);
+    } catch (error) {
+        res.status(500).send('Error updating review: ' + error.message);
     }
 });
