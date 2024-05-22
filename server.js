@@ -211,3 +211,18 @@ app.get('/api/account/:username', async (req, res) => {
         res.status(500).send('Error fetching reviews: ' + error.message);
     }
 });
+
+app.put('/api/reviews/:id', async (req, res) => {
+    try {
+        const review = await Review.findById(req.params.id);
+        if (!review) {
+            return res.status(404).send('Review not found');
+        }
+        review.rating = req.body.rating;
+        review.comment = req.body.comment;
+        await review.save();
+        res.send(review);
+    } catch (error) {
+        res.status(500).send('Error updating review: ' + error.message);
+    }
+});

@@ -42,18 +42,10 @@ fetch("/api/reviews")
             }
             renderReviews(filteredReviews);
         }
-        
-        
-
-
-
     })
     .catch(error => {
         alert(error.message);
     });
-
-
-
 
 
 function renderReviews(data) {
