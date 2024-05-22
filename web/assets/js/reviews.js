@@ -56,29 +56,20 @@ function renderReviews(data) {
     data.forEach(review => { 
         const reviewDiv = document.createElement('div');
         reviewDiv.className = 'grid grid-cols-12 w-full pb-8 border-b border-gray-100';
-        reviewDiv.className = 'grid grid-cols-12 w-full pb-8 border-b border-gray-100';
         reviewDiv.innerHTML = `
             <div class="col-span-12 lg:col-span-10">
-                <div class="sm:flex gap-6 flex-row w-full" >
                 <div class="sm:flex gap-6 flex-row w-full" >
                     <img src="assets/images/elon-musk.jpg" alt="${review.username} image" class="w-32 h-32 rounded-full">
                         <div class="text w-40 flex  gap-2  "
                             <div class="font-medium text-lg leading-8 text-gray-900 mb-2" style="flex-basis: fit-content;">${review.course}</div>
                             <div class="font-medium text-lg leading-8 text-gray-900 mb-2">By ${review.instructor}</div>
                         </div>
-                        <div class="text w-40 flex  gap-2  "
-                            <div class="font-medium text-lg leading-8 text-gray-900 mb-2" style="flex-basis: fit-content;">${review.course}</div>
-                            <div class="font-medium text-lg leading-8 text-gray-900 mb-2">By ${review.instructor}</div>
-                        </div>
                         <p class="font-medium text-lg leading-8 text-gray-900 mb-2">${review.username}</p>
-                        <div class="flex items-center gap-2  w-full mb-5">
                         <div class="flex items-center gap-2  w-full mb-5">
                             ${generateRatingStars(review.rating)}
                         </div>
                         <p class="font-normal text-base leading-7 text-gray-400 mb-4 lg:pr-8">${review.comment}</p>
                         <div class="flex items-center justify-between">
-                           
-                            <p class="font-medium text-sm leading-7 text-gray-400 lg:text-center whitespace-nowrap">
                            
                             <p class="font-medium text-sm leading-7 text-gray-400 lg:text-center whitespace-nowrap">
                                 ${new Date(review.date).toLocaleDateString()}
@@ -108,10 +99,6 @@ function generateRatingStars(rating) {
     }
     return starsHtml;
 }
-
-
-
-
 
 
 
