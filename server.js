@@ -48,6 +48,7 @@ const reviewSchema = new mongoose.Schema({
     username: String,
     course: String,
     instructor: String,
+    instructor: String,
     rating: Number,
     comment: String
 }, { collection: 'reviews' });
@@ -100,6 +101,7 @@ app.post('/rating', (req, res) => {
         _id: req.body._id,
         username: req.body.username,
         course: req.body.course,
+        instructor: req.body.instructor,
         instructor: req.body.instructor,
         rating: req.body.rating,
         comment: req.body.comment,
