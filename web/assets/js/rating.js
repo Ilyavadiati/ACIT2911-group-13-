@@ -49,9 +49,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const rating = getRating();
             const course = getCourse();
-            const username = user.username; // Replace with actual username
+            const username = user ? user.username : '';
             const date = new Date(); 
             const instructor = getInstructor();
+
+            // Check if user is logged in
+            if (!user) {
+                alert('Please log in with BCIT email to submit a rating.');
+                // redirect to login page
+                window.location.href = '/login';
+                return;
+            }
+
             fetch("/rating", {
                 method: "POST",
                 body: JSON.stringify({
