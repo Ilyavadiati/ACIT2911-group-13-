@@ -226,3 +226,18 @@ app.put('/api/reviews/:id', async (req, res) => {
         res.status(500).send('Error updating review: ' + error.message);
     }
 });
+
+
+// Delete route
+app.delete('/api/reviews/:id', async (req, res) => {
+    try {
+        const review = await Review.findById(req.params.id);
+        if (!review) {
+            return res.status(404).send('Review not found');
+        }
+        await review.deleteOne();
+        res.send(review);
+    } catch (error) {
+        res.status(500).send('Error deleting review: ' + error.message);
+    }
+});

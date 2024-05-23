@@ -40,6 +40,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const user = getUser();
     const form = document.getElementById('rating_form');
     const submitButton = document.getElementById('rating-submit');
+    const anonymousCheckbox = document.createElement('input');
+    anonymousCheckbox.type = 'checkbox';
+    anonymousCheckbox.id = 'anonymous';
+    anonymousCheckbox.name = 'anonymous';
+    const anonymousLabel = document.createElement('label');
+    anonymousLabel.htmlFor = 'anonymous';
+    anonymousLabel.textContent = 'Submit anonymously';
+    
+    form.appendChild(anonymousCheckbox);
+    form.appendChild(anonymousLabel);
+    
     submitButton.addEventListener('click', function(event) {
         // Prevent form submission if validation fails
         // if (!validateForm()) {
@@ -49,9 +60,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const rating = getRating();
             const course = getCourse();
-            const username = user.username; // Replace with actual username
+            const username = anonymousCheckbox.checked ? 'Anonymous' : (user ? user.username : '');
             const date = new Date(); 
             const instructor = getInstructor();
+
+            // Check if user is logged in
+            if (!user) {
+                alert('Please log in with BCIT email to submit a rating.');
+                // redirect to login page
+                window.location.href = '/login';
+                return;
+            }
+
             fetch("/rating", {
                 method: "POST",
                 body: JSON.stringify({

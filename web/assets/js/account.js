@@ -54,6 +54,7 @@ function renderReviews(reviews) {
         const cancelButton = reviewWrapper.querySelector('#cancel-button');
         const commentTextarea = reviewWrapper.querySelector('#comment');
         const starRating = reviewWrapper.querySelector('#star-rating');
+        const deleteButton = reviewWrapper.querySelector('#delete-button');
 
         modifyButton.addEventListener('click', () => {
             commentTextarea.disabled = false;
@@ -102,8 +103,31 @@ function renderReviews(reviews) {
             modifyButton.classList.remove('hidden');
             starRating.innerHTML = generateRatingStars(newRating);
         });
+        
+        deleteButton.addEventListener('click', () => {
+            if (confirm('Are you sure you want to delete this review?')) {
+                fetch(`/api/reviews/${review._id}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to delete review');
+                    }
+                    alert('Review deleted successfully');
+                    reviewWrapper.remove();
+                })
+                .catch(error => {
+                    alert(error.message);
+                });
+            }
+        });
     });
 };
+
+    
 
 function generateRatingStars(rating) {
     let starsHtml = '';

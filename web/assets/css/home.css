@@ -228,19 +228,57 @@ main section {
     text-decoration: none;
 }
 
-.image-section-course {
-    background-image: url(../images/bcit-big-info.png);
+.image-section-courseACIT1420 {
+    background-image: url(../images/ACIT1420.jpg);
     background-size: cover;
     background-position: center;
     height: 150px; /* Half the total height you desire */
 }
 
-.image-section-instructor {
+.image-section-courseACIT1515 {
+    background-image: url(../images/ACIT1515.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
+.image-section-courseACIT1620 {
+    background-image: url(../images/ACIT1620.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
+
+.image-section-courseACIT1630 {
+    background-image: url(../images/ACIT1630.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
+.image-section-instructor1 {
     background-image: url(../images/elon-musk.jpg);
     background-size: cover;
     background-position: center;
     height: 150px; /* Half the total height you desire */
 }
+
+.image-section-instructor2 {
+    background-image: url(../images/elon-musk.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
+
+.image-section-instructor3 {
+    background-image: url(../images/elon-musk.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 150px; /* Half the total height you desire */
+}
+
 
 .text-section {
     padding-top: 150px;
