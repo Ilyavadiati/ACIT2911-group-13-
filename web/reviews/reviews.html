@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Reviews</title>
+    <link href="../assets/css/reviews.css" rel="stylesheet">
+    <title>Reviews Page</title>
     <script src="../assets/js/reviews.js" defer></script>
 </head>
-<body class="h-full">
-    <section class="py-24 relative h-full">
-        <div class="w-full max-w-7xl px-4 md:px-5 lg-6 mx-auto">
-            <h2 class="font-manrope font-bold text-4xl text-black text-center mb-11 py-8">Student Ratings & Reviews</h2>
-            <div id="course-wrapper">
-                <form class="ml-0 max-w-sm mx-auto">
-                    <label for="courseSelect" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a course</label>
-                    <select id="courseSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option>Choose a course</option>
+<body>
+    <section class="reviews-section">
+        <div class="container mx-auto py-12">
+            <h2 class="text-3xl font-semibold text-center mb-8">Student Ratings & Reviews</h2>
+            <div class="flex justify-between items-center mb-8">
+                <div class="w-1/2">
+                    <label for="course-select" class="block mb-2 text-sm font-medium text-gray-700">Select a Course</label>
+                    <select id="course-select" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="">--Please choose an option--</option>
                         <option value="ACIT 1420" data-instructor="Uwe Helm">ACIT 1420 - Introduction to Systems Administration</option>
                         <option value="ACIT 1515" data-instructor="Chris Harris">ACIT 1515 - Scripting for IT</option>
                         <option value="ACIT 1620" data-instructor="Yves Shema">ACIT 1620 - Fundamental Web Technologies</option>
@@ -34,14 +34,11 @@
                         <option value="COMM 2216" data-instructor="Thorsten Ewald">COMM 2216 - Business Communications 2</option>
                         <option value="MATH 1350" data-instructor="Kambiz HajiKolaei">MATH 1350 - Statistics for IT</option>
                     </select>
-                </form>
-            </div>
-
-            <div id="instructor-wrapper">
-                <form class="ml-0 max-w-sm mx-auto">
-                    <label for="instructorSelect" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an instructor</label>
-                    <select id="instructorSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <option>Choose an instructor</option>
+                </div>
+                <div class="w-1/2">
+                    <label for="instructor-select" class="block mb-2 text-sm font-medium text-gray-700">Select an Instructor</label>
+                    <select id="instructor-select" class="border border-gray-300 text-gray-900 text-sm rounded-lg focus:outline-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <option value="">--Please choose an option--</option>
                         <option value="Uwe Helm">Uwe Helm</option>
                         <option value="Chris Harris">Chris Harris</option>
                         <option value="Yves Shema">Yves Shema</option>
@@ -56,13 +53,12 @@
                         <option value="Trevor Lord">Trevor Lord</option>
                         <option value="Kambiz HajiKolaei">Kambiz HajiKolaei</option>
                     </select>
-                </form>
+                </div>
             </div>
-
-            <div id="reviews-list" class="grid grid-cols-1 gap-8">
+            <div class="reviews-grid grid grid-cols-1 gap-8">
+                <!-- Review cards will go here -->
             </div>
         </div>
     </section>
-                                            
 </body>
 </html>
