@@ -232,21 +232,21 @@ main section {
     background-image: url(../images/ACIT1420.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
 
 .image-section-courseACIT1515 {
     background-image: url(../images/ACIT1515.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
 
 .image-section-courseACIT1620 {
     background-image: url(../images/ACIT1620.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
 
 
@@ -254,30 +254,182 @@ main section {
     background-image: url(../images/ACIT1630.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
 
-.image-section-instructor1 {
-    background-image: url(../images/elon-musk.jpg);
+.image-section-courseCOMM1116 {
+    background-image: url(../images/COMM1116\ -\ BCOM1.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
 
-.image-section-instructor2 {
-    background-image: url(../images/elon-musk.jpg);
+.image-section-courseMATH1310 {
+    background-image: url(../images/MATH1310.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
 
-
-.image-section-instructor3 {
-    background-image: url(../images/elon-musk.jpg);
+.image-section-courseORGB1100 {
+    background-image: url(../images/ORGB1100.jpg);
     background-size: cover;
     background-position: center;
-    height: 150px; /* Half the total height you desire */
+    height: 140px; /* Half the total height you desire */
 }
+
+.image-section-courseACIT2420 {
+    background-image: url(../images/ACIT2420.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-courseACIT2620 {
+    background-image: url(../images/ACIT2620.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-courseACIT2515 {
+    background-image: url(../images/ACIT2515.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+
+.image-section-courseACIT2520 {
+    background-image: url(../images/ACIT2520.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-courseACIT2811 {
+    background-image: url(../images/ACIT2811.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-courseACIT2831{
+    background-image: url(../images/ACIT2831.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+
+.image-section-courseACIT2911 {
+    background-image: url(../images/ACIT2911.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+
+.image-section-courseACIT4770 {
+    background-image: url(../images/ACIT4770.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-courseCOMM2216 {
+    background-image: url(../images/COMM2216\ -\ BCOM2.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-courseMATH1350 {
+    background-image: url(../images/MATH1350.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorArmaanDhanji {
+    background-image: url(../images/Armaan\ Dhanji.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorAyeshaAnzer {
+    background-image: url(../images/Ayesha\ Anzer.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+
+.image-section-instructorYvesShema {
+    background-image: url(../images/Yves\ Shema.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorChrisHarris {
+    background-image: url(../images/Chris\ Harris.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorReenaAlias {
+    background-image: url(../images/Reena\ Alias.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorEdSweeney {
+    background-image: url(../images/Ed\ Sweeney.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorTrevorLord {
+    background-image: url(../images/Trevor\ Lord.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorTimGuicherd {
+    background-image: url(../images/Timothee\ Guicherd.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorUweHelm {
+    background-image: url(../images/Uwe\ Helm.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructorKambizHajikolaei {
+    background-image: url(../images/Kambiz\ Hajikolaei.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+.image-section-instructor {
+    background-image: url(../images/);
+    background-size: cover;
+    background-position: center;
+    height: 140px; /* Half the total height you desire */
+}
+
+
 
 
 .text-section {
