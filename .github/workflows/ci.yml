@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - front-end
   pull_request:
     branches:
       - main
+      - front-end
 
 jobs:
   build:
