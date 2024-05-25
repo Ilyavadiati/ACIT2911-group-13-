@@ -1,5 +1,4 @@
-import { getUser } from './userSession.js';
-
+import { getUser } from "./userSession.js";
 
 fetch("/api/reviews")
   .then((response) => {
@@ -53,6 +52,19 @@ fetch("/api/reviews")
     alert(error.message);
   });
 
+const userImages = [
+  "assets/images/elon-musk.jpg",
+  "assets/images/Ayesha Anzer.jpeg",
+  "assets/images/Armaan Dhanji.jpeg",
+  "assets/images/Trevor Lord.jpeg",
+  "assets/images/Yves Shema.jpeg",
+];
+
+function getRandomImage(images) {
+  const randomIndex = Math.floor(Math.random() * images.length);
+  return images[randomIndex];
+}
+
 function renderReviews(data) {
   const elementToRender = document.getElementById("reviews-list");
   // Clear previous content
@@ -60,11 +72,12 @@ function renderReviews(data) {
 
   data.forEach((review) => {
     const reviewDiv = document.createElement("div");
-    reviewDiv.className = " pb-8 border-b border-gray-100 w-3/4 mx-auto  bg-slate-50 rounded-2xl  p-8 ";
+    reviewDiv.className =
+      " pb-8 border-b border-gray-100 w-3/4 mx-auto  bg-slate-50 rounded-2xl  p-8 ";
     reviewDiv.innerHTML = `
             <div class="flex flex-col items-start space-y-4  ">
                     <div class='flex items-start space-x-4'>
-                        <img src="assets/images/elon-musk.jpg" alt="${review.username} image" class="w-16 h-16 object-cover rounded-full"/>
+                        <img src="${getRandomImage(userImages)}" alt="${review.username} image" class="w-16 h-16 object-cover rounded-full"/>
                         
                             <div class="text w-40 flex flex-col  gap-2">
                                 <p class="font-medium text-lg leading-8 text-gray-900 mb-2">${review.username}</p>
@@ -108,33 +121,30 @@ function generateRatingStars(rating) {
   return starsHtml;
 }
 
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const user = getUser();
-    if (user) {
-        document.getElementById('login').style.display = 'none';
-        document.getElementById('signup').style.display = 'none';
-        document.getElementById('user').innerHTML = `Hi, ${user.username}`;
-        document.getElementById('logout').style.display = 'block';
-    } else {
-        document.getElementById('login').style.display = 'block';
-        document.getElementById('signup').style.display = 'block';
-        document.getElementById('user').innerHTML = "";
-        document.getElementById('logout').style.display = 'none';
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const user = getUser();
+  if (user) {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("signup").style.display = "none";
+    document.getElementById("user").innerHTML = `Hi, ${user.username}`;
+    document.getElementById("logout").style.display = "block";
+  } else {
+    document.getElementById("login").style.display = "block";
+    document.getElementById("signup").style.display = "block";
+    document.getElementById("user").innerHTML = "";
+    document.getElementById("logout").style.display = "none";
+  }
 });
 
-document.getElementById('logout').addEventListener('click', function(event) {
-    localStorage.removeItem('user');
-    window.location.href = '/';
+document.getElementById("logout").addEventListener("click", function (event) {
+  localStorage.removeItem("user");
+  window.location.href = "/";
 });
 
 // redirect to the account page
-document.getElementById('user').addEventListener('click', function(event) {
-    const user = getUser();
-    if (user) {
-        window.location.href = `/account/${user.username}`;
-    }
+document.getElementById("user").addEventListener("click", function (event) {
+  const user = getUser();
+  if (user) {
+    window.location.href = `/account/${user.username}`;
+  }
 });
