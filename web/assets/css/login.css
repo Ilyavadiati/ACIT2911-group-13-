@@ -117,6 +117,31 @@ input[type="text"], input[type="password"] {
     background-color: #002744;
 }
 
+#signup-submit {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    width: 8rem;
+    padding: 10px;
+    background-color: #003C71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#signup-submit:hover {
+    background-color: #002744;
+}
+
+
 a {
     color: #003C71;
     text-decoration: none;
