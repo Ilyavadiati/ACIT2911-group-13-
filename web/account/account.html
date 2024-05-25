@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/account.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito Sans' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Account</title>
     <script type="module" src="../assets/js/account.js" defer></script>
 </head>
 <body>
+    <header>
+        <nav class="menubar">
+            <ul class="h-16">
+                <button id="user" class="menu-button cursor-pointer self-center p-4 text-base"></button>
+                <a id="login" href="/login"><button class="menu-button cursor-pointer">Login</button></a>
+                <a id="signup" href="/signup"><button class="menu-button cursor-pointer">Sign Up</button></a>
+                <a id="logout"><button class="menu-button cursor-pointer">Log Out</button></a>
+            </ul>
+        </nav>
+        <div class="header">
+            <a href='/'> 
+            <img src="../assets/images/logo.svg" alt="BCIT Logo" class="logo">
+            </a>
+            <ul class="px-5">
+                <li><a href="/reviews"><button class="header-button cursor-pointer">Review</button></a></li>
+                <li><a href="/rating"><button class="header-button cursor-pointer">Add Review</button></a></li>
+            </ul>
+        </div>
+       
+        
+    </header>
 
   <div class="bg-gray-100">
     <div class="container mx-auto py-8">
