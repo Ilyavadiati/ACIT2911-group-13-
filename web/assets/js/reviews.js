@@ -54,10 +54,10 @@ fetch("/api/reviews")
 
 const userImages = [
   "assets/images/elon-musk.jpg",
-  "assets/images/Ayesha Anzer.jpeg",
-  "assets/images/Armaan Dhanji.jpeg",
-  "assets/images/Trevor Lord.jpeg",
-  "assets/images/Yves Shema.jpeg",
+  "assets/images/sam altman.jpg",
+  "assets/images/tim-cook_image.png",
+  "assets/images/zark.png",
+  "assets/images/billgatesheadshot.jpg",
 ];
 
 function getRandomImage(images) {
