@@ -20,7 +20,6 @@ document.getElementById('logout').addEventListener('click', function(event) {
     window.location.href = '/';
 });
 
-// redirect to the account page
 document.getElementById('user').addEventListener('click', function(event) {
     const user = getUser();
     if (user) {

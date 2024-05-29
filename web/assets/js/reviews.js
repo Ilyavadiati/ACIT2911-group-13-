@@ -75,7 +75,7 @@ function renderReviews(data) {
     reviewDiv.className =
       " pb-8 border-b border-gray-100 w-3/4 mx-auto  bg-slate-50 rounded-2xl  p-8 ";
     reviewDiv.innerHTML = `
-            <div class="flex flex-col items-start space-y-4  ">
+            <div class="flex flex-col items-start space-y-4">
                     <div class='flex items-start space-x-4'>
                         <img src="${getRandomImage(userImages)}" alt="${review.username} image" class="w-16 h-16 object-cover rounded-full"/>
                         
@@ -97,12 +97,25 @@ function renderReviews(data) {
                         </div>
                         <p class="font-normal text-base leading-7 text-black-400 mb-4 lg:pr-8">${review.comment}</p>
                     <div/>
+                    <button class="report-button bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-red-700" data-review-id="${review.id}">
+                      Report
+                    </button>
                 
             </div>
         `;
 
     elementToRender.appendChild(reviewDiv);
   });
+  document.querySelectorAll(".report-button").forEach((button) => {
+    button.addEventListener("click", function () {
+      const reviewId = this.getAttribute("data-review-id");
+      const reason = prompt("Please describe the problem with this review:");
+      if (reason) {
+        submitReport(reviewId, reason);
+      }
+    });
+  });
+  
 }
 
 function generateRatingStars(rating) {
@@ -119,6 +132,26 @@ function generateRatingStars(rating) {
     }
   }
   return starsHtml;
+}
+
+function submitReport(reviewId, reason) {
+  fetch('/api/reports', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      reviewId: reviewId,
+      reason: reason,
+    }),
+  })
+  .then((response) => {
+      alert('Thank you for your report. Our admin will check the report.');
+  
+  })
+  .catch((error) => {
+    alert(error.message);
+  });
 }
 
 document.addEventListener("DOMContentLoaded", function () {

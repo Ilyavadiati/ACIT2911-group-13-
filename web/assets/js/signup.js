@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     "Content-type": "application/json; charset=UTF-8"
                 }
             })
-
             .then(response => {
                 if (response.status === 200) {
                     alert('Account created successfully! Please login to continue.');
@@ -25,8 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     alert('An error occurred. Please try again.');
                 }
-            
-            })
+            });
         }
     });
 
@@ -49,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check for strong password
         if (!isStrongPassword(password)) {
-            alert('Please create a strong password. Passwords must be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
+            alert('Please create a strong password. Passwords must be exctly 8 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.');
             return false;
         }
 
@@ -60,4 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&]{8,}$/;
         return regex.test(password);
     }
+
+    document.getElementById('show-password').addEventListener('change', function() {
+        const passwordInput = document.getElementById('password');
+        if (this.checked) {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
 });

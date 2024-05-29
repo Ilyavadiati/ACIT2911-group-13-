@@ -50,7 +50,30 @@ select:focus {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
 }
-
+.report-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .report-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  .report-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
 @media (min-width: 768px) {
   .grid {
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
